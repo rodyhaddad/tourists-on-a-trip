@@ -8,7 +8,7 @@ export class Neighborhood {
 		this.TTAmount = 0;
 	}
 	
-	persistTTAmount(value:any = this.TTAmount) {
+	setTTAmount(value:any = this.TTAmount) {
 		this.TTAmount = parseFloat(value);
 		return this;
 	}
