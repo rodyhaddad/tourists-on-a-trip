@@ -111,8 +111,7 @@ declare module "angular2/angular2" {
    * ```
    * @exportedAs angular2/di_annotations
    */
-  class Injectable {
-  }
+  var Injectable: (...args: any[]) => (cls: any) => any;
   
 
   /**
@@ -2419,7 +2418,7 @@ declare module "angular2/angular2" {
     selector?: string;
   }
   
-  class DirectiveAnnotation extends  Injectable {
+  class DirectiveAnnotation {
 
   }
   
