@@ -8,8 +8,6 @@
         <form [ng-form-model]="peopleCountForm">
             <input type="range"
                 ng-control="amount"
-                (input)="reportAmount()"
-                (change)="reportAmount()"
             />
             Value: {{ amountControl.value }}
         </form>
