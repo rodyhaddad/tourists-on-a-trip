@@ -1,1 +1,10 @@
-Works!
+<h1>
+    Tourists On A Trip
+</h1>
+
+<div class="row" *ng-for="#neighborhood of neighborhoods;"  >
+    <div class="col-md-12">
+        {{ neighborhood.name }}
+        {{ neighborhood.TTAmount }}
+    </div>
+</div>

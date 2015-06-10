@@ -1,13 +1,34 @@
 /// <reference path="../typings/tsd.d.ts"/>
-import {Component, View, bootstrap} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
+import {NeighborhoodHandler} from 'service/neighborhood-handler/neighborhood-handler';
+import {Neighborhood} from 'service/neighborhood-handler/neighborhood';
+
 
 @Component({
-	selector: 'tourists-tripping-app'
+	selector: 'tourists-tripping-app',
+	appInjector: [NeighborhoodHandler]
 })
 @View({
-	templateUrl: 'tourists-tripping.html'
+	templateUrl: 'tourists-tripping.html',
+	directives: [NgFor]
 })
 class TouristsTrippingApp {
+	neighborhoods:Neighborhood[];
+	
+	constructor(neighborhoodHandler:NeighborhoodHandler) {
+		this.neighborhoods = neighborhoodHandler.neighborhoods;
+		
+		neighborhoodHandler.pushNeighboorhood(
+			'Central Amsterdam',
+			'Red Light District',
+			'Leidseplein',
+			'Oud Zuid',
+			'Rembrandtplein',
+			'Jordaan',
+			'The Plantagebuurt',
+			'De Pijp'
+		);
+	}
 	
 }
 
