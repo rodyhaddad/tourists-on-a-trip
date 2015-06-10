@@ -17,7 +17,7 @@
     "angular2/angular2.d.ts": {
       "commit": "52dc8fc39354569838b7bc09e24df690b852b4d9"
     },
-    "socket.io/socket.io.d.ts": {
+    "socket.io-client/socket.io-client.d.ts": {
       "commit": "52dc8fc39354569838b7bc09e24df690b852b4d9"
     }
   }
