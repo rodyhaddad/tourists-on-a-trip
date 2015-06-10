@@ -2,7 +2,7 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
 
 @Component({
-	selector: 'tourists-touring-app'
+	selector: 'tourists-tripping-app'
 })
 @View({
 	templateUrl: 'tourists-tripping.html'
@@ -10,3 +10,5 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 class TouristsTrippingApp {
 	
 }
+
+bootstrap(TouristsTrippingApp);
