@@ -1,5 +1,5 @@
 /// <reference path="../typings/tsd.d.ts"/>
-import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor, FormBuilder} from 'angular2/angular2';
 import {NeighborhoodHandler} from 'service/neighborhood-handler/neighborhood-handler';
 import {Neighborhood} from 'service/neighborhood-handler/neighborhood';
 import {PeopleCount} from 'component/people-count/people-count';
@@ -7,7 +7,7 @@ import {PeopleCount} from 'component/people-count/people-count';
 
 @Component({
 	selector: 'tourists-tripping-app',
-	appInjector: [NeighborhoodHandler]
+	appInjector: [NeighborhoodHandler, FormBuilder]
 })
 @View({
 	templateUrl: 'tourists-tripping.html',
