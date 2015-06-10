@@ -2,6 +2,7 @@
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
 import {NeighborhoodHandler} from 'service/neighborhood-handler/neighborhood-handler';
 import {Neighborhood} from 'service/neighborhood-handler/neighborhood';
+import {PeopleCount} from 'component/people-count/people-count';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {Neighborhood} from 'service/neighborhood-handler/neighborhood';
 })
 @View({
 	templateUrl: 'tourists-tripping.html',
-	directives: [NgFor]
+	directives: [NgFor, PeopleCount]
 })
 class TouristsTrippingApp {
 	neighborhoods:Neighborhood[];
