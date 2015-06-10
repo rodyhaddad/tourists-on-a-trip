@@ -4,9 +4,11 @@
 
 <div class="row" *ng-for="#neighborhood of neighborhoods;"  >
     <div class="col-md-12">
+        {{ neighborhood.TTAmount }}
         <people-count
             [tt-title]="neighborhood.name"
             [tt-amount]="neighborhood.TTAmount"
+            (tt-amount-change)="neighborhood.persistTTAmount($event.amount)"
         </people-count>
     </div>
 </div>
