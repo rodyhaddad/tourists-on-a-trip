@@ -7,7 +7,7 @@
         <people-count
             [tt-title]="neighborhood.name"
             [tt-amount]="neighborhood.TTAmount"
-            (tt-amount-change)="neighborhood.persistTTAmount($event.amount)"
+            (tt-amount-change)="updateNeighborhood(neighborhood, $event.amount)"
         </people-count>
     </div>
 </div>
