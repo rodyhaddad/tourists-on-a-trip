@@ -1,12 +1,16 @@
 
-function Neighborhood(name) {
-	this.name = name;
-	this.TTAmount = 0;
-}
-
-Neighborhood.prototype.setTTAmount = function(value) {
-	if (typeof value !== "undefined") {
-		this.TTAmount = parseFloat(value);
+(function () {
+	angular.module('tourists-tripping')
+		.value('Neighborhood', Neighborhood)
+	function Neighborhood(name) {
+		this.name = name;
+		this.TTAmount = 0;
 	}
-	return this;
-}
+	
+	Neighborhood.prototype.setTTAmount = function(value) {
+		if (typeof value !== "undefined") {
+			this.TTAmount = parseFloat(value);
+		}
+		return this;
+	};
+}());

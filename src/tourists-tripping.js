@@ -1,19 +1,5 @@
-TouristsTrippingApp.annotations = [
-	new angular.ComponentAnnotation({
-		selector: 'tourists-tripping-app',
-		appInjector: [NeighborhoodHandler, SocketHandler, angular.FormBuilder]
-	}),
-	new angular.ViewAnnotation({
-		templateUrl: 'tourists-tripping.html',
-		directives: [angular.NgFor, PeopleCount]
-	})
-];
-TouristsTrippingApp.parameters = [[NeighborhoodHandler]];
-
-function TouristsTrippingApp(neighborhoodHandler) {
-		this.neighborhoodHandler = neighborhoodHandler;
-		this.neighborhoods = neighborhoodHandler.neighborhoods;
-		
+angular.module('tourists-tripping', [])
+	.run(function (neighborhoodHandler) {
 		neighborhoodHandler.pushNeighboorhood(
 			'Central Amsterdam',
 			'Red Light District',
@@ -24,12 +10,21 @@ function TouristsTrippingApp(neighborhoodHandler) {
 			'The Plantagebuurt',
 			'De Pijp'
 		);
-}
-
-TouristsTrippingApp.prototype.updateNeighborhood = function(neighborhood, amount) {
-	this.neighborhoodHandler.updateNeighborhood(neighborhood, amount);
-}
+	})
+	.directive('touristsTrippingApp', function (neighborhoodHandler) {
+		return {
+			restrict: 'E',
+			templateUrl: 'tourists-tripping.html',
+			link: function (scope) {
+				scope.neighborhoods = neighborhoodHandler.neighborhoods;
+				
+				scope.updateNeighborhood = function(neighborhood, amount) {
+					neighborhoodHandler.updateNeighborhood(neighborhood, amount);
+				};
+			}
+		}
+	});
 
 document.addEventListener('DOMContentLoaded', function () {
-	angular.bootstrap(TouristsTrippingApp);
+	angular.bootstrap(document, ['tourists-tripping']);
 });

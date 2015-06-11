@@ -2,12 +2,12 @@
     Tourists On A Trip
 </h1>
 
-<div class="row" *ng-for="#neighborhood of neighborhoods;"  >
+<div class="row" ng-repeat="neighborhood in neighborhoods"  >
     <div class="col-md-12">
         <people-count
-            [tt-title]="neighborhood.name"
-            [tt-amount]="neighborhood.TTAmount"
-            (tt-amount-change)="updateNeighborhood(neighborhood, $event.amount)"
+            tt-title="neighborhood.name"
+            tt-amount="neighborhood.TTAmount"
+            tt-amount-change="updateNeighborhood(neighborhood, $event.amount)"
         </people-count>
     </div>
 </div>

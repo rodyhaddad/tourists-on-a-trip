@@ -5,15 +5,15 @@
     </div>
     <div class="panel-body">
         <p>How many Tourists on a trip do you see?</p>
-        <form [ng-form-model]="peopleCountForm">
+        <form>
             <input type="range"
-                ng-control="amount"
+                ng-model="amountControl"
             />
-            Value: {{ amountControl.value }}
+            Value: {{ amountControl }}
         </form>
     </div>
     <div class="panel-footer">
         <button type="button" class="btn btn-success"
-            (click)="reportAmount()">Report</button>
+            ng-click="reportAmount()">Report</button>
     </div>
 </div>
