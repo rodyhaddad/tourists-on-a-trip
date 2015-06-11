@@ -29,6 +29,7 @@ export class NeighborhoodHandler {
 	}
 	
 	updateNeighborhood(neighborhood:Neighborhood, amount:Number) {
+		neighborhood.setTTAmount(amount);
 		this.socketHandler.updateNeighborhood(neighborhood.name, amount);
 	}
 }
