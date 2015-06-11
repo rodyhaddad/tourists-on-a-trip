@@ -6,15 +6,18 @@
     <link href="/vendor/material-fullpalette.css" type="text/css" rel="stylesheet"></link>
     <script src="/vendor/traceur-runtime.js"></script>
     <script src="/vendor/system@0.16.11.js"></script>
-    <script src="/vendor/angular2.dev.js"></script>
+    <script src="/vendor/angular2.sfx.dev.js"></script>
     <script src="http://localhost:9898/socket.io/socket.io.js"></script>
+    
+    <script src="/component/people-count/people-count.js"></script>
+    <script src="/service/socket-handler/socket-handler.js"></script>
+    <script src="/service/neighborhood-handler/neighborhood.js"></script>
+    <script src="/service/neighborhood-handler/neighborhood-handler.js"></script>
+    <script src="/tourists-tripping.js"></script>
 </head>
 <body>
     <div class="container">
         <tourists-tripping-app>Loading...</tourists-tripping-app>
     </div>
-    <script>
-        System.import('tourists-tripping');
-    </script>
 </body>
 </html>
